@@ -1,5 +1,5 @@
 import prisma from '@/lib/db';
-import { ArrowRightRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function LevelsPage() {
@@ -77,7 +77,7 @@ export default async function LevelsPage() {
                     <td key={`${item.company.id}-${row.rank}`} className="px-6 py-8 align-top relative">
                       {idx > 0 && item.level && row.levels[idx-1].level && (
                         <div className="hidden lg:block absolute top-10 -left-6 text-muted-foreground/30">
-                          <ArrowRightRight className="h-5 w-5" />
+                          <ArrowRight className="h-5 w-5" />
                         </div>
                       )}
                       
@@ -102,7 +102,7 @@ export default async function LevelsPage() {
       
       <div className="mt-8 bg-blue-500/10 border border-blue-500/20 rounded-lg p-6 flex flex-col md:flex-row gap-6 items-start md:items-center">
         <div className="bg-blue-500/20 p-3 rounded-full text-blue-500 shrink-0">
-          <ArrowRightRight className="h-6 w-6" />
+          <ArrowRight className="h-6 w-6" />
         </div>
         <div>
           <h3 className="font-bold text-lg mb-1">Why Level Mapping Matters</h3>

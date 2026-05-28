@@ -29,16 +29,17 @@ export default async function Home() {
               </p>
             </div>
             
-            <div className="w-full max-w-2xl relative group">
-              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary to-accent opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-              <div className="relative flex items-center bg-card rounded-lg shadow-xl overflow-hidden border border-border">
-                <Search className="ml-4 h-6 w-6 text-muted-foreground" />
+            <div className="w-full max-w-2xl mt-4">
+              <div className="relative flex items-center bg-background rounded-full shadow-sm border border-border focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all overflow-hidden p-1.5">
+                <div className="pl-4 pr-2 text-muted-foreground">
+                  <Search className="h-5 w-5" />
+                </div>
                 <input 
                   type="text" 
                   placeholder="Search for a company (e.g., Google, TCS, Meta)..." 
-                  className="flex-1 h-14 bg-transparent px-4 text-base md:text-lg outline-none"
+                  className="flex-1 h-12 bg-transparent px-2 text-base md:text-lg outline-none placeholder:text-muted-foreground/70"
                 />
-                <button className="h-full bg-primary text-primary-foreground px-6 font-medium hover:bg-primary/90 transition-colors">
+                <button className="h-12 rounded-full bg-primary text-primary-foreground px-8 font-medium hover:bg-primary/90 transition-colors ml-2">
                   Search
                 </button>
               </div>
