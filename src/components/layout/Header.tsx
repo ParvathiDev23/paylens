@@ -31,6 +31,9 @@ export default function Header() {
           </div>
           
           <div className="flex items-center gap-2">
+            <Link href="/submit" className="hidden lg:inline-flex h-9 items-center justify-center rounded-md border border-primary text-primary px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 mr-2">
+              Submit Salary
+            </Link>
             <Link href="/auth/login" className="hidden sm:inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-muted">
               Log in
             </Link>
