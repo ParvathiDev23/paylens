@@ -1,0 +1,127 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// -- Enums --
+
+enum CompanySize {
+  STARTUP
+  SMALL
+  MEDIUM
+  LARGE
+  ENTERPRISE
+}
+
+enum Track {
+  IC
+  MANAGEMENT
+}
+
+enum Currency {
+  USD
+  INR
+  EUR
+  GBP
+  CAD
+  AUD
+  SGD
+  JPY
+}
+
+// -- Models --
+
+model Company {
+  id            String        @id @default(cuid())
+  name          String        @unique
+  slug          String        @unique
+  logoUrl       String?
+  industry      String
+  headquarters  String
+  size          CompanySize
+  website       String?
+  description   String?
+  levels        Level[]
+  salaryEntries SalaryEntry[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Level {
+  id            String        @id @default(cuid())
+  companyId     String
+  company       Company       @relation(fields: [companyId], references: [id])
+  title         String
+  internalCode  String
+  track         Track
+  seniorityRank Int
+  salaryEntries SalaryEntry[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@unique([companyId, internalCode])
+}
+
+model SalaryEntry {
+  id                String   @id @default(cuid())
+  companyId         String
+  company           Company  @relation(fields: [companyId], references: [id])
+  levelId           String
+  level             Level    @relation(fields: [levelId], references: [id])
+  role              String
+  location          String
+  country           String
+  yearsOfExperience Int
+  yearsAtCompany    Int
+  baseSalary        Int
+  equity            Int      @default(0)
+  bonus             Int      @default(0)
+  totalCompensation Int
+  currency          Currency @default(USD)
+  verified          Boolean  @default(false)
+  userId            String?
+  user              User?    @relation(fields: [userId], references: [id])
+  submittedAt       DateTime @default(now())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([companyId, role, levelId, location])
+  @@index([role])
+  @@index([country])
+}
+
+model User {
+  id               String            @id @default(cuid())
+  email            String            @unique
+  name             String?
+  passwordHash     String
+  submissions      SalaryEntry[]
+  savedCompanies   SavedCompany[]
+  savedComparisons SavedComparison[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+}
+
+model SavedCompany {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  companySlug String
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, companySlug])
+}
+
+model SavedComparison {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  name         String
+  companySlugs String[]
+  filters      Json?
+  createdAt    DateTime @default(now())
+}
