@@ -16,6 +16,7 @@ export default function Header() {
             <Link href="/levels" className="transition-colors hover:text-primary text-foreground/80">Levels Map</Link>
             <Link href="/compare" className="transition-colors hover:text-primary text-foreground/80">Compare</Link>
             <Link href="/calculator" className="transition-colors hover:text-primary text-foreground/80">Calculator</Link>
+            <Link href="/trends" className="transition-colors hover:text-primary text-foreground/80">Trends</Link>
           </nav>
         </div>
         
