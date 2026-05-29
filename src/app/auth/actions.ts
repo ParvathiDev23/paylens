@@ -10,7 +10,11 @@ export async function authenticate(
   formData: FormData,
 ) {
   try {
-    await signIn('credentials', formData);
+    await signIn('credentials', {
+      email: formData.get('email'),
+      password: formData.get('password'),
+      redirectTo: '/',
+    });
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
@@ -55,7 +59,11 @@ export async function register(
   });
 
   try {
-    await signIn('credentials', formData);
+    await signIn('credentials', {
+      email,
+      password,
+      redirectTo: '/',
+    });
   } catch (error) {
     if (error instanceof AuthError) {
       return 'Registration successful, but login failed.';
