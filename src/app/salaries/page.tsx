@@ -3,6 +3,7 @@ import Link from 'next/link';
 import prisma from '@/lib/db';
 import { formatCurrency, formatCompactNumber } from '@/lib/utils';
 import { Building2, MapPin, Briefcase, Filter } from 'lucide-react';
+import SalaryCharts from '@/components/dashboard/SalaryCharts';
 
 export default async function SalariesPage({
   searchParams,
@@ -41,7 +42,7 @@ export default async function SalariesPage({
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar Filters */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-card border border-border rounded-lg p-5">
+          <div className="bg-card border-none rounded-xl p-6" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.1)' }}>
             <div className="flex items-center gap-2 font-semibold mb-4 pb-2 border-b border-border">
               <Filter className="h-4 w-4" /> Filters
             </div>
@@ -99,9 +100,12 @@ export default async function SalariesPage({
           </div>
         </div>
 
-        {/* Data Table */}
+        {/* Charts & Data Table */}
         <div className="lg:col-span-3">
-          <div className="bg-card border border-border rounded-lg overflow-hidden">
+          
+          <SalaryCharts salaries={salaries} />
+
+          <div className="bg-card border-none rounded-xl overflow-hidden" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.1)' }}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm text-left">
                 <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
