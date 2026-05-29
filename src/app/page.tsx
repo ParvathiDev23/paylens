@@ -129,60 +129,59 @@ export default async function Home() {
           <div className="absolute right-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to left, var(--background), transparent)' }} />
           <div className="flex animate-marquee">
             {[
-              { name: 'Google', domain: 'google.com' },
-              { name: 'Microsoft', domain: 'microsoft.com' },
-              { name: 'Meta', domain: 'meta.com' },
-              { name: 'Netflix', domain: 'netflix.com' },
-              { name: 'Flipkart', domain: 'flipkart.com' },
-              { name: 'Swiggy', domain: 'swiggy.com' },
-              { name: 'Zomato', domain: 'zomato.com' },
-              { name: 'Infosys', domain: 'infosys.com' },
-              { name: 'Deloitte', domain: 'deloitte.com' },
-              { name: 'Canva', domain: 'canva.com' },
-              { name: 'TCS', domain: 'tcs.com' },
-              { name: 'Cognizant', domain: 'cognizant.com' },
-              { name: 'Accenture', domain: 'accenture.com' },
-              { name: 'EY', domain: 'ey.com' },
-              { name: 'Amazon', domain: 'amazon.com' },
-              { name: 'Apple', domain: 'apple.com' },
+              { name: 'Google', color: '#4285F4' },
+              { name: 'Microsoft', color: '#00A4EF' },
+              { name: 'Meta', color: '#0081FB' },
+              { name: 'Netflix', color: '#E50914' },
+              { name: 'Flipkart', color: '#2874F0' },
+              { name: 'Swiggy', color: '#FC8019' },
+              { name: 'Zomato', color: '#E23744' },
+              { name: 'Infosys', color: '#007CC3' },
+              { name: 'Deloitte', color: '#86BC25' },
+              { name: 'Canva', color: '#00C4CC' },
+              { name: 'TCS', color: '#0070AD' },
+              { name: 'Cognizant', color: '#1A4789' },
+              { name: 'Accenture', color: '#A100FF' },
+              { name: 'EY', color: '#FFE600' },
+              { name: 'Amazon', color: '#FF9900' },
+              { name: 'Apple', color: '#555555' },
             ].map((company, i) => (
               <div key={`first-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
-                <img 
-                  src={`https://logo.clearbit.com/${company.domain}`} 
-                  alt={company.name}
-                  className="h-8 w-8 rounded-md object-contain"
-                  loading="lazy"
-                />
-                <span className="text-sm font-bold text-foreground/50 whitespace-nowrap">{company.name}</span>
+                <div 
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-sm font-black shrink-0"
+                  style={{ backgroundColor: company.color }}
+                >
+                  {company.name.charAt(0)}
+                </div>
+                <span className="text-sm font-bold text-foreground/60 whitespace-nowrap">{company.name}</span>
               </div>
             ))}
-            {/* Duplicate for seamless loop */}
             {[
-              { name: 'Google', domain: 'google.com' },
-              { name: 'Microsoft', domain: 'microsoft.com' },
-              { name: 'Meta', domain: 'meta.com' },
-              { name: 'Netflix', domain: 'netflix.com' },
-              { name: 'Flipkart', domain: 'flipkart.com' },
-              { name: 'Swiggy', domain: 'swiggy.com' },
-              { name: 'Zomato', domain: 'zomato.com' },
-              { name: 'Infosys', domain: 'infosys.com' },
-              { name: 'Deloitte', domain: 'deloitte.com' },
-              { name: 'Canva', domain: 'canva.com' },
-              { name: 'TCS', domain: 'tcs.com' },
-              { name: 'Cognizant', domain: 'cognizant.com' },
-              { name: 'Accenture', domain: 'accenture.com' },
-              { name: 'EY', domain: 'ey.com' },
-              { name: 'Amazon', domain: 'amazon.com' },
-              { name: 'Apple', domain: 'apple.com' },
+              { name: 'Google', color: '#4285F4' },
+              { name: 'Microsoft', color: '#00A4EF' },
+              { name: 'Meta', color: '#0081FB' },
+              { name: 'Netflix', color: '#E50914' },
+              { name: 'Flipkart', color: '#2874F0' },
+              { name: 'Swiggy', color: '#FC8019' },
+              { name: 'Zomato', color: '#E23744' },
+              { name: 'Infosys', color: '#007CC3' },
+              { name: 'Deloitte', color: '#86BC25' },
+              { name: 'Canva', color: '#00C4CC' },
+              { name: 'TCS', color: '#0070AD' },
+              { name: 'Cognizant', color: '#1A4789' },
+              { name: 'Accenture', color: '#A100FF' },
+              { name: 'EY', color: '#FFE600' },
+              { name: 'Amazon', color: '#FF9900' },
+              { name: 'Apple', color: '#555555' },
             ].map((company, i) => (
               <div key={`second-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
-                <img 
-                  src={`https://logo.clearbit.com/${company.domain}`} 
-                  alt={company.name}
-                  className="h-8 w-8 rounded-md object-contain"
-                  loading="lazy"
-                />
-                <span className="text-sm font-bold text-foreground/50 whitespace-nowrap">{company.name}</span>
+                <div 
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-sm font-black shrink-0"
+                  style={{ backgroundColor: company.color }}
+                >
+                  {company.name.charAt(0)}
+                </div>
+                <span className="text-sm font-bold text-foreground/60 whitespace-nowrap">{company.name}</span>
               </div>
             ))}
           </div>
