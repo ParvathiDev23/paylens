@@ -4,7 +4,7 @@ import { Search, Menu } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.12)' }}>
+    <header className="sticky top-0 z-50 w-full bg-card" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.12)' }}>
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2">

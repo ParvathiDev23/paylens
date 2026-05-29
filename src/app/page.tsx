@@ -30,7 +30,7 @@ export default async function Home() {
             </p>
             
             <div className="w-full max-w-xl">
-              <div className="flex items-center bg-white rounded-xl p-2" style={{ boxShadow: '0 5px 20px rgba(179,179,191,0.25)' }}>
+              <div className="flex items-center bg-card rounded-xl p-2" style={{ boxShadow: '0 5px 20px rgba(179,179,191,0.25)' }}>
                 <div className="pl-4 pr-2 text-muted-foreground">
                   <Search className="h-5 w-5" />
                 </div>
@@ -48,7 +48,7 @@ export default async function Home() {
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
               <span className="text-sm text-muted-foreground">Popular:</span>
               {['Google', 'TCS', 'Amazon', 'Meta', 'Stripe'].map(company => (
-                <Link key={company} href={`/salaries/${company.toLowerCase()}`} className="px-4 py-1.5 bg-white rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-all" style={{ boxShadow: '0 2px 8px rgba(179,179,191,0.15)' }}>
+                <Link key={company} href={`/salaries/${company.toLowerCase()}`} className="px-4 py-1.5 bg-card rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-all" style={{ boxShadow: '0 2px 8px rgba(179,179,191,0.15)' }}>
                   {company}
                 </Link>
               ))}
@@ -66,7 +66,7 @@ export default async function Home() {
           </div>
           
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <Layers className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -74,7 +74,7 @@ export default async function Home() {
               <p className="text-muted-foreground leading-relaxed">See how Google's L5 maps to Meta's E5 and Amazon's L6. Apples-to-apples comparison.</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <DollarSign className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -82,7 +82,7 @@ export default async function Home() {
               <p className="text-muted-foreground leading-relaxed">Base salary is just the start. We break down equity, bonuses, and real purchasing power.</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <Scale className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -90,7 +90,7 @@ export default async function Home() {
               <p className="text-muted-foreground leading-relaxed">Got multiple offers? Compare them side by side to find the best overall package.</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <Calculator className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -98,7 +98,7 @@ export default async function Home() {
               <p className="text-muted-foreground leading-relaxed">$200k in California is not the same as Texas. See what actually hits your bank account.</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <TrendingUp className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -106,7 +106,7 @@ export default async function Home() {
               <p className="text-muted-foreground leading-relaxed">Track compensation trends, hot markets, and year-over-year growth across roles.</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+            <div className="bg-card rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
                 <BarChart3 className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
@@ -132,7 +132,7 @@ export default async function Home() {
               <Link 
                 key={company.id} 
                 href={`/salaries/${company.slug}`}
-                className="group bg-white rounded-2xl p-7 transition-all hover:-translate-y-1"
+                className="group bg-card rounded-2xl p-7 transition-all hover:-translate-y-1"
                 style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}
               >
                 <div className="flex items-center justify-between mb-5">
@@ -164,7 +164,7 @@ export default async function Home() {
             <p className="text-lg opacity-90 max-w-xl mx-auto mb-8">Share your compensation anonymously and help others make better career decisions.</p>
             <Link 
               href="/submit"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 font-bold transition-all hover:opacity-90"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-card px-8 font-bold transition-all hover:opacity-90"
               style={{ color: '#5759FF', boxShadow: '0 4px 15px rgba(0,0,0,0.15)' }}
             >
               Submit Your Salary
