@@ -13,7 +13,7 @@ export default async function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2 group">
-            <Logo className="w-8 h-8 text-primary group-hover:scale-105 transition-transform" />
+            <Logo className="w-8 h-8 text-foreground group-hover:scale-105 transition-transform" />
             <span className="font-display text-2xl font-bold tracking-tight text-foreground">{APP_NAME}</span>
           </Link>
           <nav className="hidden md:flex items-center gap-1">

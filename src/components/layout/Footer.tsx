@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-block mb-4 flex items-center space-x-2 group">
-              <Logo className="w-6 h-6 text-primary group-hover:scale-105 transition-transform" />
+              <Logo className="w-6 h-6 text-white group-hover:scale-105 transition-transform" />
               <span className="font-display text-xl font-bold tracking-tight text-white">{APP_NAME}</span>
             </Link>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
