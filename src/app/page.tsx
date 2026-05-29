@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="w-full py-20 md:py-32 lg:py-40">
+      <section className="w-full pt-20 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
@@ -55,7 +55,7 @@ export default async function Home() {
             </div>
 
             {/* Animated Floating Elements */}
-            <div className="relative w-full h-32 md:h-48 mt-12 hidden sm:block pointer-events-none">
+            <div className="relative w-full h-24 md:h-28 mt-8 hidden sm:block pointer-events-none">
               {/* Left Floating Card */}
               <div className="absolute left-0 md:left-12 lg:left-24 top-0 animate-float bg-card p-4 rounded-2xl border-none w-56 opacity-90" style={{ boxShadow: '0 15px 35px rgba(179,179,191,0.2)' }}>
                 <div className="flex items-center gap-3 mb-2">
@@ -91,7 +91,7 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="w-full py-16 md:py-24">
+      <section className="w-full pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Everything you need to negotiate smarter</h2>
