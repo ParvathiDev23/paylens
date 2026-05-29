@@ -2,7 +2,6 @@
   <img src="https://raw.githubusercontent.com/ParvathiDev23/paylens/main/public/logo.png" alt="PayLens Logo" width="400" />
   
   <h1 align="center">PayLens</h1>
-
   <p align="center">
     <strong>Democratizing Tech Compensation Data 💸</strong>
     <br />
