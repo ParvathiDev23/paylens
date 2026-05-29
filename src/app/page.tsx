@@ -117,6 +117,78 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Company Logos Ticker */}
+      <section className="w-full py-14 overflow-hidden">
+        <div className="container mx-auto px-6 mb-8">
+          <p className="text-center text-sm font-bold uppercase tracking-wider text-muted-foreground">
+            Salary data from professionals at
+          </p>
+        </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to right, var(--background), transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to left, var(--background), transparent)' }} />
+          <div className="flex animate-marquee">
+            {[
+              { name: 'Google', domain: 'google.com' },
+              { name: 'Microsoft', domain: 'microsoft.com' },
+              { name: 'Meta', domain: 'meta.com' },
+              { name: 'Netflix', domain: 'netflix.com' },
+              { name: 'Flipkart', domain: 'flipkart.com' },
+              { name: 'Swiggy', domain: 'swiggy.com' },
+              { name: 'Zomato', domain: 'zomato.com' },
+              { name: 'Infosys', domain: 'infosys.com' },
+              { name: 'Deloitte', domain: 'deloitte.com' },
+              { name: 'Canva', domain: 'canva.com' },
+              { name: 'TCS', domain: 'tcs.com' },
+              { name: 'Cognizant', domain: 'cognizant.com' },
+              { name: 'Accenture', domain: 'accenture.com' },
+              { name: 'EY', domain: 'ey.com' },
+              { name: 'Amazon', domain: 'amazon.com' },
+              { name: 'Apple', domain: 'apple.com' },
+            ].map((company, i) => (
+              <div key={`first-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
+                <img 
+                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  alt={company.name}
+                  className="h-8 w-8 rounded-md object-contain"
+                  loading="lazy"
+                />
+                <span className="text-sm font-bold text-foreground/50 whitespace-nowrap">{company.name}</span>
+              </div>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {[
+              { name: 'Google', domain: 'google.com' },
+              { name: 'Microsoft', domain: 'microsoft.com' },
+              { name: 'Meta', domain: 'meta.com' },
+              { name: 'Netflix', domain: 'netflix.com' },
+              { name: 'Flipkart', domain: 'flipkart.com' },
+              { name: 'Swiggy', domain: 'swiggy.com' },
+              { name: 'Zomato', domain: 'zomato.com' },
+              { name: 'Infosys', domain: 'infosys.com' },
+              { name: 'Deloitte', domain: 'deloitte.com' },
+              { name: 'Canva', domain: 'canva.com' },
+              { name: 'TCS', domain: 'tcs.com' },
+              { name: 'Cognizant', domain: 'cognizant.com' },
+              { name: 'Accenture', domain: 'accenture.com' },
+              { name: 'EY', domain: 'ey.com' },
+              { name: 'Amazon', domain: 'amazon.com' },
+              { name: 'Apple', domain: 'apple.com' },
+            ].map((company, i) => (
+              <div key={`second-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
+                <img 
+                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  alt={company.name}
+                  className="h-8 w-8 rounded-md object-contain"
+                  loading="lazy"
+                />
+                <span className="text-sm font-bold text-foreground/50 whitespace-nowrap">{company.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Companies Section */}
       <section className="w-full py-16 md:py-24" style={{ backgroundColor: '#f0f1f7' }}>
         <div className="container mx-auto px-6">

@@ -121,6 +121,17 @@
 
   --font-sans: 'Lato', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: 'Rubik', ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 html {
