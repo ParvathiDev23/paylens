@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { APP_NAME, APP_DESCRIPTION } from '@/lib/constants';
+import Logo from '@/components/ui/Logo';
 
 export default function Footer() {
   return (
@@ -7,8 +8,9 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-bold text-white">{APP_NAME}</span>
+            <Link href="/" className="inline-block mb-4 flex items-center space-x-2 group">
+              <Logo className="w-6 h-6 text-primary group-hover:scale-105 transition-transform" />
+              <span className="font-display text-xl font-bold tracking-tight text-white">{APP_NAME}</span>
             </Link>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
               {APP_DESCRIPTION}
