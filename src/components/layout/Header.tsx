@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import { APP_NAME } from '@/lib/constants';
-import { Search, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import { auth } from '@/auth';
+import UserNav from './UserNav';
 
-export default function Header() {
+export default async function Header() {
+  const session = await auth();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-card" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.12)' }}>
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
@@ -23,12 +27,19 @@ export default function Header() {
           <Link href="/submit" className="hidden lg:inline-flex h-10 items-center justify-center rounded-lg border-2 border-primary text-primary px-5 text-sm font-bold transition-all hover:bg-primary hover:text-white">
             Submit Salary
           </Link>
-          <Link href="/auth/login" className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg px-5 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-secondary transition-all">
-            Log in
-          </Link>
-          <Link href="/auth/signup" className="inline-flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-bold text-white transition-all hover:opacity-90" style={{ boxShadow: '0 4px 12px rgba(87,89,255,0.3)' }}>
-            Sign up
-          </Link>
+
+          {session?.user ? (
+            <UserNav user={{ name: session.user.name, email: session.user.email }} />
+          ) : (
+            <>
+              <Link href="/auth/login" className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg px-5 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-secondary transition-all">
+                Log in
+              </Link>
+              <Link href="/auth/signup" className="inline-flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-bold text-white transition-all hover:opacity-90" style={{ boxShadow: '0 4px 12px rgba(87,89,255,0.3)' }}>
+                Sign up
+              </Link>
+            </>
+          )}
           <button className="md:hidden ml-1 flex h-10 w-10 items-center justify-center rounded-lg hover:bg-secondary transition-all">
             <Menu className="h-5 w-5" />
           </button>
