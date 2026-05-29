@@ -128,66 +128,48 @@ export default async function Home() {
           <div className="absolute left-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to right, var(--background), transparent)' }} />
           <div className="absolute right-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to left, var(--background), transparent)' }} />
           <div className="flex animate-marquee">
-            {[
-              { name: 'Google', domain: 'google.com' },
-              { name: 'Microsoft', domain: 'microsoft.com' },
-              { name: 'Meta', domain: 'meta.com' },
-              { name: 'Netflix', domain: 'netflix.com' },
-              { name: 'Flipkart', domain: 'flipkart.com' },
-              { name: 'Swiggy', domain: 'swiggy.com' },
-              { name: 'Zomato', domain: 'zomato.com' },
-              { name: 'Infosys', domain: 'infosys.com' },
-              { name: 'Deloitte', domain: 'deloitte.com' },
-              { name: 'Canva', domain: 'canva.com' },
-              { name: 'TCS', domain: 'tcs.com' },
-              { name: 'Cognizant', domain: 'cognizant.com' },
-              { name: 'Accenture', domain: 'accenture.com' },
-              { name: 'EY', domain: 'ey.com' },
-              { name: 'Amazon', domain: 'amazon.com' },
-              { name: 'Apple', domain: 'apple.com' },
-            ].map((company, i) => (
-              <div key={`first-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.2)' }}>
-                  <img 
-                    src={`https://icon.horse/icon/${company.domain}`} 
-                    alt={company.name}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
+            {(() => {
+              const companies = [
+                { name: 'Google', domain: 'google.com' },
+                { name: 'Microsoft', domain: 'microsoft.com' },
+                { name: 'Meta', domain: 'meta.com' },
+                { name: 'Netflix', domain: 'netflix.com' },
+                { name: 'Flipkart', domain: 'flipkart.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/flipkart.svg' },
+                { name: 'Swiggy', domain: 'swiggy.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/swiggy-1.svg' },
+                { name: 'Zomato', domain: 'zomato.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg' },
+                { name: 'Infosys', domain: 'infosys.com' },
+                { name: 'Deloitte', domain: 'deloitte.com' },
+                { name: 'Canva', domain: 'canva.com' },
+                { name: 'TCS', domain: 'tcs.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/tata-consultancy-services.svg' },
+                { name: 'Cognizant', domain: 'cognizant.com' },
+                { name: 'Accenture', domain: 'accenture.com' },
+                { name: 'EY', domain: 'ey.com' },
+                { name: 'Amazon', domain: 'amazon.com' },
+                { name: 'Apple', domain: 'apple.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg' },
+                { name: 'Mastercard', domain: 'mastercard.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg' },
+              ];
+              
+              const renderCompany = (company: {name: string, domain: string, logoUrl?: string}, keyPrefix: string, i: number) => (
+                <div key={`${keyPrefix}-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.2)' }}>
+                    <img 
+                      src={company.logoUrl || `https://icon.horse/icon/${company.domain}`} 
+                      alt={company.name}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-sm font-bold text-foreground/60 whitespace-nowrap">{company.name}</span>
                 </div>
-                <span className="text-sm font-bold text-foreground/60 whitespace-nowrap">{company.name}</span>
-              </div>
-            ))}
-            {[
-              { name: 'Google', domain: 'google.com' },
-              { name: 'Microsoft', domain: 'microsoft.com' },
-              { name: 'Meta', domain: 'meta.com' },
-              { name: 'Netflix', domain: 'netflix.com' },
-              { name: 'Flipkart', domain: 'flipkart.com' },
-              { name: 'Swiggy', domain: 'swiggy.com' },
-              { name: 'Zomato', domain: 'zomato.com' },
-              { name: 'Infosys', domain: 'infosys.com' },
-              { name: 'Deloitte', domain: 'deloitte.com' },
-              { name: 'Canva', domain: 'canva.com' },
-              { name: 'TCS', domain: 'tcs.com' },
-              { name: 'Cognizant', domain: 'cognizant.com' },
-              { name: 'Accenture', domain: 'accenture.com' },
-              { name: 'EY', domain: 'ey.com' },
-              { name: 'Amazon', domain: 'amazon.com' },
-              { name: 'Apple', domain: 'apple.com' },
-            ].map((company, i) => (
-              <div key={`second-${i}`} className="flex items-center gap-3 mx-8 shrink-0">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0" style={{ boxShadow: '0 2px 10px rgba(179,179,191,0.2)' }}>
-                  <img 
-                    src={`https://icon.horse/icon/${company.domain}`} 
-                    alt={company.name}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <span className="text-sm font-bold text-foreground/60 whitespace-nowrap">{company.name}</span>
-              </div>
-            ))}
+              );
+
+              return (
+                <>
+                  {companies.map((company, i) => renderCompany(company, 'first', i))}
+                  {companies.map((company, i) => renderCompany(company, 'second', i))}
+                </>
+              );
+            })()}
           </div>
         </div>
       </section>
