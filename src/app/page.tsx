@@ -1,6 +1,6 @@
 import Link from "next/link";
 import prisma from "@/lib/db";
-import { ArrowRight, Search, Building2, TrendingUp, DollarSign } from "lucide-react";
+import { ArrowRight, Search, Layers, DollarSign, TrendingUp, Scale, Calculator, BarChart3 } from "lucide-react";
 import { APP_NAME } from "@/lib/constants";
 
 export default async function Home() {
@@ -15,40 +15,40 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+    <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted/30">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-8 text-center">
-            <div className="space-y-4 max-w-[800px]">
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                Compare compensation <span className="text-primary">intelligently</span>
-              </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Levels matter more than job titles. See true total compensation mapped across companies to make better career decisions.
-              </p>
-            </div>
+      <section className="w-full py-20 md:py-32 lg:py-40">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+              Know your worth.
+              <br />
+              <span style={{ color: '#5759FF' }}>Compare intelligently.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+              Levels matter more than job titles. See true total compensation mapped across companies to make better career decisions.
+            </p>
             
-            <div className="w-full max-w-2xl mt-4">
-              <div className="relative flex items-center bg-background rounded-full shadow-sm border border-border focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all overflow-hidden p-1.5">
+            <div className="w-full max-w-xl">
+              <div className="flex items-center bg-white rounded-xl p-2" style={{ boxShadow: '0 5px 20px rgba(179,179,191,0.25)' }}>
                 <div className="pl-4 pr-2 text-muted-foreground">
                   <Search className="h-5 w-5" />
                 </div>
                 <input 
                   type="text" 
-                  placeholder="Search for a company (e.g., Google, TCS, Meta)..." 
-                  className="flex-1 h-12 bg-transparent px-2 text-base md:text-lg outline-none placeholder:text-muted-foreground/70"
+                  placeholder="Search for a company..." 
+                  className="flex-1 h-12 bg-transparent px-2 text-base outline-none placeholder:text-muted-foreground/60"
                 />
-                <button className="h-12 rounded-full bg-primary text-primary-foreground px-8 font-medium hover:bg-primary/90 transition-colors ml-2">
+                <button className="h-12 rounded-xl text-white px-8 font-bold text-sm transition-all hover:opacity-90" style={{ backgroundColor: '#5759FF', boxShadow: '0 4px 12px rgba(87,89,255,0.3)' }}>
                   Search
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm mt-8">
-              <span className="text-muted-foreground">Trending:</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+              <span className="text-sm text-muted-foreground">Popular:</span>
               {['Google', 'TCS', 'Amazon', 'Meta', 'Stripe'].map(company => (
-                <Link key={company} href={`/salaries/${company.toLowerCase()}`} className="px-3 py-1 bg-muted rounded-full hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer border border-border">
+                <Link key={company} href={`/salaries/${company.toLowerCase()}`} className="px-4 py-1.5 bg-white rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-all" style={{ boxShadow: '0 2px 8px rgba(179,179,191,0.15)' }}>
                   {company}
                 </Link>
               ))}
@@ -58,40 +58,71 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="w-full py-12 md:py-24 bg-background border-t border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 bg-primary/10 rounded-full">
-                <Building2 className="h-8 w-8 text-primary" />
+      <section className="w-full py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Everything you need to negotiate smarter</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Stop guessing. Start comparing real data across companies, levels, and locations.</p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <Layers className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
-              <h3 className="text-xl font-bold">Cross-Company Leveling</h3>
-              <p className="text-muted-foreground">Apples-to-apples comparison. See how Google's L5 compares to Meta's E5 and Amazon's L6.</p>
+              <h3 className="font-display text-xl font-bold mb-3">Cross-Company Leveling</h3>
+              <p className="text-muted-foreground leading-relaxed">See how Google's L5 maps to Meta's E5 and Amazon's L6. Apples-to-apples comparison.</p>
             </div>
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 bg-primary/10 rounded-full">
-                <DollarSign className="h-8 w-8 text-primary" />
+            
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <DollarSign className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
-              <h3 className="text-xl font-bold">Total Compensation</h3>
-              <p className="text-muted-foreground">Don't just look at base salary. We break down equity, bonuses, and real purchasing power.</p>
+              <h3 className="font-display text-xl font-bold mb-3">Total Compensation</h3>
+              <p className="text-muted-foreground leading-relaxed">Base salary is just the start. We break down equity, bonuses, and real purchasing power.</p>
             </div>
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 bg-primary/10 rounded-full">
-                <TrendingUp className="h-8 w-8 text-primary" />
+            
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <Scale className="h-7 w-7" style={{ color: '#5759FF' }} />
               </div>
-              <h3 className="text-xl font-bold">Career Trajectories</h3>
-              <p className="text-muted-foreground">See how compensation grows as you advance from entry-level to staff and beyond.</p>
+              <h3 className="font-display text-xl font-bold mb-3">Multi-Offer Compare</h3>
+              <p className="text-muted-foreground leading-relaxed">Got multiple offers? Compare them side by side to find the best overall package.</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <Calculator className="h-7 w-7" style={{ color: '#5759FF' }} />
+              </div>
+              <h3 className="font-display text-xl font-bold mb-3">Take-Home Calculator</h3>
+              <p className="text-muted-foreground leading-relaxed">$200k in California is not the same as Texas. See what actually hits your bank account.</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <TrendingUp className="h-7 w-7" style={{ color: '#5759FF' }} />
+              </div>
+              <h3 className="font-display text-xl font-bold mb-3">Market Trends</h3>
+              <p className="text-muted-foreground leading-relaxed">Track compensation trends, hot markets, and year-over-year growth across roles.</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 transition-all hover:-translate-y-1" style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(87,89,255,0.08)' }}>
+                <BarChart3 className="h-7 w-7" style={{ color: '#5759FF' }} />
+              </div>
+              <h3 className="font-display text-xl font-bold mb-3">Visual Breakdowns</h3>
+              <p className="text-muted-foreground leading-relaxed">Interactive charts showing exactly how companies structure their compensation packages.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Companies */}
-      <section className="w-full py-12 md:py-24 bg-muted/30 border-t border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Top Companies</h2>
-            <Link href="/salaries" className="text-primary hover:underline flex items-center font-medium">
+      {/* Companies Section */}
+      <section className="w-full py-16 md:py-24" style={{ backgroundColor: '#f0f1f7' }}>
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="font-display text-3xl font-bold">Top Companies</h2>
+            <Link href="/salaries" className="flex items-center font-bold text-sm transition-all hover:opacity-70" style={{ color: '#5759FF' }}>
               View all <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
@@ -101,27 +132,43 @@ export default async function Home() {
               <Link 
                 key={company.id} 
                 href={`/salaries/${company.slug}`}
-                className="group flex flex-col justify-between rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md hover:border-primary/50"
+                className="group bg-white rounded-2xl p-7 transition-all hover:-translate-y-1"
+                style={{ boxShadow: '0 5px 15px rgba(179,179,191,0.15)' }}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-xl">{company.name}</h3>
-                    <span className="text-xs font-medium bg-muted px-2 py-1 rounded-full text-muted-foreground">
-                      {company.industry}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                    {company.headquarters} • {company.size.charAt(0) + company.size.slice(1).toLowerCase()}
-                  </p>
+                <div className="flex items-center justify-between mb-5">
+                  <h3 className="font-display font-bold text-xl">{company.name}</h3>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(87,89,255,0.08)', color: '#5759FF' }}>
+                    {company.industry}
+                  </span>
                 </div>
-                <div className="pt-4 border-t border-border flex justify-between items-center text-sm">
-                  <span className="font-medium">{company._count.salaryEntries} salaries</span>
-                  <span className="text-primary group-hover:translate-x-1 transition-transform inline-block">
-                    View data →
+                <p className="text-sm text-muted-foreground mb-6">
+                  {company.headquarters} -- {company.size.charAt(0) + company.size.slice(1).toLowerCase()}
+                </p>
+                <div className="flex justify-between items-center text-sm pt-5" style={{ borderTop: '1px solid rgba(179,179,191,0.2)' }}>
+                  <span className="font-bold text-foreground">{company._count.salaryEntries} salaries</span>
+                  <span className="font-bold group-hover:translate-x-1 transition-transform inline-block" style={{ color: '#5759FF' }}>
+                    Explore &rarr;
                   </span>
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-20 md:py-28">
+        <div className="container mx-auto px-6">
+          <div className="rounded-3xl p-12 md:p-16 text-center text-white" style={{ backgroundColor: '#5759FF', backgroundImage: 'linear-gradient(135deg, #5759FF 0%, #4345d6 100%)' }}>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Help build salary transparency</h2>
+            <p className="text-lg opacity-90 max-w-xl mx-auto mb-8">Share your compensation anonymously and help others make better career decisions.</p>
+            <Link 
+              href="/submit"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 font-bold transition-all hover:opacity-90"
+              style={{ color: '#5759FF', boxShadow: '0 4px 15px rgba(0,0,0,0.15)' }}
+            >
+              Submit Your Salary
+            </Link>
           </div>
         </div>
       </section>
