@@ -53,6 +53,39 @@ export default async function Home() {
                 </Link>
               ))}
             </div>
+
+            {/* Animated Floating Elements */}
+            <div className="relative w-full h-32 md:h-48 mt-12 hidden sm:block pointer-events-none">
+              {/* Left Floating Card */}
+              <div className="absolute left-0 md:left-12 lg:left-24 top-0 animate-float bg-card p-4 rounded-2xl border-none w-56 opacity-90" style={{ boxShadow: '0 15px 35px rgba(179,179,191,0.2)' }}>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">G</div>
+                  <div>
+                    <p className="text-xs font-bold">Google • L5</p>
+                    <p className="text-[10px] text-muted-foreground">Software Engineer</p>
+                  </div>
+                </div>
+                <div className="flex justify-between items-end">
+                  <p className="font-display font-bold text-lg text-primary">$385k</p>
+                  <p className="text-[10px] text-green-500 font-medium">+15% vs avg</p>
+                </div>
+              </div>
+
+              {/* Right Floating Card */}
+              <div className="absolute right-0 md:right-12 lg:right-24 top-12 md:top-8 animate-float-delayed bg-card p-4 rounded-2xl border-none w-56 opacity-90" style={{ boxShadow: '0 15px 35px rgba(179,179,191,0.2)' }}>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-xs">M</div>
+                  <div>
+                    <p className="text-xs font-bold">Meta • E5</p>
+                    <p className="text-[10px] text-muted-foreground">Product Manager</p>
+                  </div>
+                </div>
+                <div className="flex justify-between items-end">
+                  <p className="font-display font-bold text-lg text-primary">$410k</p>
+                  <p className="text-[10px] text-green-500 font-medium">Top tier</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
